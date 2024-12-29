@@ -15,6 +15,11 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 import type { Todo, Meta } from './models';
+import axios from 'axios';
+
+axios.get('http://localhost:8000/hello/Frank')
+  .then(response => {console.log(response.data)})
+  .catch(error => {console.log(error)})
 
 interface Props {
   title: string;

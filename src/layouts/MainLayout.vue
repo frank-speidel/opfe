@@ -48,6 +48,13 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import EssentialLink, { type EssentialLinkProps } from 'components/EssentialLink.vue';
+import axios from 'axios';
+
+axios.get('http://localhost:8000/navigation')
+  .then(response => {console.log(response.data)})
+  .catch(error => {console.log(error)})
+
+
 
 const linksList: EssentialLinkProps[] = [
   {
